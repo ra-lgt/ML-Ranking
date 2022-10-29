@@ -1,0 +1,307 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+
+}
+
+#backgrd {
+    background-color: rgb(192, 225, 237);
+}
+
+.det {
+    display: flex;
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+#fro {
+    padding-right: 20px;
+}
+
+#to {
+    padding-right: 20px;
+}
+
+.card p {
+    font-size: 12px;
+}
+
+.num {
+    margin: 20px 100px 0px 500px;
+    color: black;
+    font-size: small;
+}
+
+.wholecaard {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.layout {
+    display: flex;
+    flex-flow: column wrap;
+    width: 900px;
+    padding-right: 1rem;
+    margin-left: 500px;
+}
+
+
+.card {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.buscard {
+    display: flex;
+    flex-wrap: wrap;
+    color: rgb(6, 6, 6);
+    border: 1px solid rgb(255, 255, 255);
+    height: 140px;
+    justify-content: space-around;
+    padding: 0px 30px 130px 60px;
+    border-radius: 5px;
+    margin-top: 0.9rem;
+    background-color: white;
+
+}
+
+.name {
+
+    width:10%;
+    flex-flow: column wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.stime {
+    width: 10%;
+    flex-flow: column wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.etime {width:10%;
+    flex-flow: column wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.seats {
+
+
+    flex-flow: column wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.arr{
+
+    flex-flow: column wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+/*
+#name{
+    padding-right: 350px;
+
+}
+#time{
+    padding-right: 100px;
+
+
+
+}
+#price{
+    padding-right: 30px;
+
+
+
+}
+*/
+.seats button.btn3 {
+    display: flex;
+    cursor: pointer;
+    -webkit-box-pack: center;
+    margin-top: 20px;
+    justify-content: center;
+    min-width: 128px;
+    background-color: rgb(205, 118, 118);
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.4rem;
+
+}
+
+.seats button.btn3:hover {
+    background-color: #c41f1f;
+    box-shadow: 0 0px 5px 0 #c41f1f inset, 0 0px 5px 0 #c41f1f,
+        0 5px 5px 0 #c41f1f inset, 0 5px 5px 0 #c41f1f;
+    text-shadow: 0 0 5px #c41f1f, 0 0 5px #c41f1f;
+}
+
+.cardContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+    }
+}
+
+/*filter*/
+.filters {
+
+    display: flex;
+    width: 300px;
+    margin-top: 0.8rem;
+    margin-left: 70px;
+    border-radius: 5px;
+    position: absolute;
+    height: 550px;
+    background-color: white;
+}
+
+.fil {
+    display: flex;
+    height: 90px;
+    border-bottom: 1px solid rgb(217, 229, 236);
+
+}
+
+#fils {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 10px 130px 10px 20px;
+    color: black;
+    font-size: 20px;
+}
+
+#reset {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px 20px 10px 0px;
+    font-size: 15px;
+    color: grey;
+}
+
+
+
+
+.bustype {
+
+    border-bottom: 1px solid rgb(225, 231, 238);
+    position: absolute;
+    height: 300px;
+    width: 100%;
+
+}
+
+.tit {
+
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#btyp {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 110px 150px 10px 20px;
+    padding-right: 150px;
+    color: black;
+    font-size: 15px;
+
+}
+
+
+#res1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 113px 20px 10px 0px;
+    font-size: 13px;
+    color: grey;
+}
+
+
+.ac {
+
+    margin-left: 30px;
+    margin-bottom: 10px;
+    box-sizing: 10px;
+
+}
+
+.acl {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.bustimes {
+    border-bottom: 1px solid rgb(225, 231, 238);
+    position: absolute;
+    height: 550px;
+    width: 100%;
+}
+
+.bstimes {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#bustit {
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 309px 150px 10px 20px;
+    padding-right: 150px;
+    color: black;
+    font-size: 15px;
+
+}
+
+
+#res2 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 313px 20px 10px 0px;
+    font-size: 13px;
+    color: grey;
+}
+
+
+
+
+.apply {
+    border-bottom: 1px solid rgb(225, 231, 238);
+    position: absolute;
+    height: 700px;
+    width: 100%;
+}
+
+.app {
+    display: flex;
+    cursor: pointer;
+    -webkit-box-pack: center;
+    margin-top: 510px;
+    margin-left: 160px;
+    justify-content: center;
+    min-width: 128px;
+    background-color: rgb(205, 118, 118);
+    color: rgb(255, 255, 255);
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 0.4rem;
+}
+
+.app:hover {
+    background-color: #c41f1f;
+    box-shadow: 0 0px 5px 0 #c41f1f inset, 0 0px 5px 0 #c41f1f,
+        0 5px 5px 0 #c41f1f inset, 0 5px 5px 0 #c41f1f;
+    text-shadow: 0 0 5px #c41f1f, 0 0 5px #c41f1f;
+}
