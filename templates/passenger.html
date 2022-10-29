@@ -1,0 +1,175 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="passenger.css">
+    <script>
+        document.addEventListener('my-custom-event', function (event) {
+            console.log('The event was emitted, but canceled');
+            event.preventDefault();
+        });
+
+        function sayHi() {
+
+            // Create the event
+            let event = new CustomEvent('my-custom-event', {
+                bubbles: true,
+                cancelable: true,
+                detail: 'This is awesome. I could also be an object or array.'
+            });
+
+            // Emit the event
+            let canceled = !document.dispatchEvent(event);
+
+            // If cancelled, end the function
+            if (canceled) return;
+
+            // Otherwise, alert a message
+            alert('Hi there!');
+
+        }
+
+        sayHi(); 0
+    </script>
+</head>
+
+<body>
+    <form action="reservation.php" method="post">
+        <h1>Passenger Details</h1>
+        <div class="elem-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="visitor_name" placeholder="" pattern=[A-Z\sa-z]{3,20} required>
+        </div>
+        <div class="elem-group">
+            <label for="email">Your E-mail</label>
+            <input type="email" id="email" name="visitor_email" placeholder="" required>
+        </div>
+        <div class="elem-group">
+            <label for="phone">Your Phone</label>
+            <input type="tel" id="phone" name="visitor_phone" placeholder="" pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4})
+                required>
+        </div>
+        <hr>
+        <div class="elem-group inlined">
+            <label for="adult">Adults</label>
+            <input type="number" id="adult" name="total_adults" placeholder="" min="1" required>
+        </div>
+        <div class="elem-group inlined">
+            <label for="child">Children</label>
+            <input type="number" id="child" name="total_children" placeholder="" min="0" required>
+        </div>
+        <hr>
+        <h3 id="amount">Total Amount No</h3>
+        <div class="sub">
+
+            <button id="right" type="submit">Proceed to Pay</button>
+            <button type="submit">Apply Subscription</button>
+
+        </div>
+
+    </form>
+
+</body>
+
+</html>-->
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Details</title>
+    <link rel="stylesheet" href="{% static 'css/pass.css'%}">
+</head>
+
+<body style=" background-size: cover; background-repeat: no-repeat; background-image: url('{% static "img/register.jpg"%}');">
+    <select style="margin:50px 0px 0px 900px;padding:5px 128px;border-radius:5px;" name="country" id="" class="form-control">
+
+      {% for i in count %}
+        <option value="India">Passenger Details {{i}}</option>
+        {% endfor %}
+
+    </select>
+    <div class="form_wrapper" style="">
+        <div class="form_container">
+            <div class="title_container">
+                <h2 style="color: rgb(255, 255, 255);">Passenger Details</h2>
+            </div>
+            <div class="row clearfix">
+                <div class="">
+                    <form action="multipass" method="post">
+                        {% csrf_token %}
+                        <div class="input_field"> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg></span>
+                            <input type="text" name="name" placeholder="Enter Name" required />
+                        </div>
+                        <div class="input_field"> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                                </svg></span>
+                            <input type="email" name="mail" placeholder="Enter Mail" required />
+                        </div>
+                        <div class="input_field"> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
+                                </svg></span>
+                            <input type="tel" name="phone" placeholder="Enter Phone" required />
+                        </div>
+
+                        <div class="input_field radio_option">
+                            <input type="radio" name="radiogroup1" id="rd1">
+                            <label for="rd1" style="color: white;">Male</label>
+                            <input type="radio" name="radiogroup1" id="rd2">
+                            <label for="rd2" style="color:white;">Female</label>
+                        </div>
+                        <div class="input_field select_option">
+                            <select>
+                                <option>Select a country</option>
+                                <option>India</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="select_arrow"></div>
+                        </div>
+                        <div class="input_field">
+                            <label style="color:white; padding-bottom: 5px;">Are you using membership or not</label>
+                            <input type="text" name="membership_option" placeholder="type yes or no" required />
+                        </div>
+                        <div class="input_field checkbox_option">
+                            <input type="checkbox" id="cb1">
+                            <label for="cb1" style="color: white;">I agree with terms and conditions</label>
+                        </div>
+
+                        <label style="color: white;">₹ {{price}}</label>
+                        <div class="double">
+                            <input id="right" class="btn4" type="submit" onclick="location.href='{{url}}'"
+                                value="Submit" />
+                        </div>
+                        <br>
+
+                    </form>
+                    <form action="payment">
+                      <input id="right" class="btn4" type="submit"
+                          value="Pay" />
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

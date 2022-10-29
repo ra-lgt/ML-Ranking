@@ -1,0 +1,89 @@
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" href="{% static 'css/mem.css' %}">
+</head>
+
+<body style="background-image: url('{% static "img/register.jpg"%}'); ">
+  <div class=" form_wrapper">
+  <div class="form_container">
+    <div class="title_container">
+      <h2>Membership Registration Form</h2>
+    </div>
+    <div class="row clearfix">
+      <div class="">
+        <form action="gold_membership" method="post">
+          {% csrf_token %}
+          <div class="input_field"> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16" style="padding-top:10px">
+                <path
+                  d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+              </svg></span>
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="input_field"> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" style="padding-top:10px">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              </svg></span>
+            <input type="text" name="f_name" placeholder="First Name" required />
+          </div>
+          <div class="input_field"> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16" style="padding-top:10px">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+              </svg></span>
+            <input type="text" name="l_name" placeholder="LastName" required />
+          </div>
+          <div class="row clearfix">
+            <div class="col_half">
+              <div class="input_field"> <span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-person-fill" viewBox="0 0 16 16" style="padding-top:10px">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                  </svg>
+                </span>
+                <input type="text" name="age" placeholder="Age" />
+              </div>
+            </div>
+            <div class="col_half">
+              <div class="input_field"> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    fill="currentColor" class="bi bi-phone-fill" viewBox="0 0 16 16" style="padding-top:10px">
+                    <path
+                      d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 0-2 0 1 1 0 0 0 2 0z" />
+                  </svg></span>
+                <input type="text" name="mobile" placeholder="Phone Number" required />
+              </div>
+            </div>
+          </div>
+          <div class="input_field radio_option">
+            <input type="radio" name="radiogroup1" id="rd1">
+            <label for="rd1" style="color:white">Male</label>
+            <input type="radio" name="radiogroup1" id="rd2">
+            <label for="rd2" style="color:white">Female</label>
+          </div>
+
+          <h3 style="text-align:center; color: white;">
+            Price : {{amount}}
+          </h3>
+      </div>
+
+
+
+      <input id="pay" class="button" type="submit" value="PAY" onclick="location.href='{{url}}'" />
+
+
+      </form>
+    </div>
+  </div>
+  </div>
+  </div>
+
+</body>
+<script>
+  var pay = document.getElementByid('pay')
+  window.onload = function () {
+    pay.click()
+  }
+</script>
+
+</html>
